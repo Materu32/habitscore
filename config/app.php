@@ -97,26 +97,24 @@ return [
     | Application Service Providers
     |--------------------------------------------------------------------------
     |
-    | Ini yang penting. Di sini Laravel mendaftarkan semua default provider,
-    | termasuk ViewServiceProvider (yang bikin binding 'view').
+    | defaultProviders() berisi semua provider bawaan Laravel
+    | (termasuk ViewServiceProvider). Kita cukup tambah
+    | AppServiceProvider milik aplikasi sendiri.
     |
     */
 
     'providers' => ServiceProvider::defaultProviders()->merge([
-       App\Providers\AppServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
     ])->toArray(),
 
-
-    
-    // App\Providers\AuthServiceProvider::class,
-    // App\Providers\BroadcastServiceProvider::class,
-    // App\Providers\EventServiceProvider::class,
-    
-
+    /*
+    |--------------------------------------------------------------------------
+    | Class Aliases
+    |--------------------------------------------------------------------------
+    */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // Tambahkan alias custom kalau butuh, contoh:
-        // 'Example' => App\Support\Example::class,
+        // Alias custom kalau suatu saat butuh
     ])->toArray(),
 
 ];
